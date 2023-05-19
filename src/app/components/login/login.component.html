@@ -1,0 +1,43 @@
+<section class=" d-flex py-2 justify-content-center align-items-center">
+    <div class="row g-0  w-100 shadow rounded overflow-hidden ">
+        <div class="col-lg-8 d-none d-lg-block">
+            <div class="image "></div>
+        </div>
+        <div class="col-lg-4 align-self-center py-4">
+            <form class="px-4" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+                <h1 class="text-center  fs-1 fw-medium">login</h1>
+                
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input formControlName="email" type="email" matInput placeholder="Ex. mohhamed.a.saeed@gmail.com">
+
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+                        Email is <strong>invalid</strong>
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="loginForm.get('passowrd')?.hasError('required')">
+                        passowrd is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.get('passowrd')?.hasError('pattern')">
+                        passowrd is <strong>invalid</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                
+                <button class="w-100 my-2" [disabled]="loginForm.invalid" mat-raised-button  color="primary">login</button>
+            </form>
+
+        </div>
+    </div>
+</section>

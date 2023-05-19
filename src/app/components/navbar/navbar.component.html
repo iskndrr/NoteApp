@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand bg-dark " data-bs-theme="dark">
+  <div class="container">
+    <h2 class="navbar-brand m-0">Note</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li *ngIf="logedIn" class="nav-item">
+          <h2  class="text-white h4 m-0">{{userName}}</h2>
+        </li>
+        <li *ngIf="logedIn" class="nav-item mx-2 align-self-center cursor ">
+         <mat-icon (click)="logOut()" class="mat-accent" color="primary">logout</mat-icon>
+        </li>
+          
+
+        <li *ngIf="!logedIn" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{menuName}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login" routerLinkActive="text-bg-danger">LogIn</a></li>
+            <li><a class="dropdown-item" routerLink="/register" routerLinkActive="text-bg-danger">Register</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

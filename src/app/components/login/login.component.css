@@ -1,0 +1,8 @@
+.image{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../../../assets/images/kelly-sikkema--1_RZL8BGBM-unsplash.jpg') center no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+section{
+    height: calc(100vh - 70px);
+}

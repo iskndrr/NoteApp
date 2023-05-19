@@ -1,0 +1,8 @@
+.image{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../../../assets/images/absolutvision-82TpEld0_e4-unsplash.jpg') center no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+section{
+    height: calc(100vh - 70px);
+}
